@@ -16,7 +16,7 @@ packages:
     source: hosted
     version: "0.0.1"
   base_models:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: base_models
       url: "https://pub.dartlang.org"

@@ -11,6 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
+  base_models: ^0.0.2
   base_domain: ^0.0.1
 
 dev_dependencies:
