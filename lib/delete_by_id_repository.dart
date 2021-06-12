@@ -8,7 +8,7 @@ mixin StorageDeleteByIdRepositoryAdapter<T> implements DeleteByIdRepository<T> {
   DbSource get dbSource;
 
   @override
-  Future<T> delete(String id, [Map args]) {
+  Future<T?> delete(String? id, [Map? args]) {
     return (apiSource as DeleteByIdApiSource<T>)
         .delete(id, args)
         .then((result) async {
@@ -22,7 +22,7 @@ mixin DeleteByIdRepositoryAdapter<T> implements DeleteByIdRepository<T> {
   ApiSource get apiSource;
 
   @override
-  Future<T> delete(String id, [Map args]) {
+  Future<T?> delete(String? id, [Map? args]) {
     return (apiSource as DeleteByIdApiSource<T>).delete(id, args);
   }
 }

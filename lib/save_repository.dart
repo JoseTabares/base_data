@@ -6,7 +6,7 @@ mixin SaveRepositoryAdapter<T, R> implements SaveRepository<T, R> {
   ApiSource get apiSource;
 
   @override
-  Future<T> save(R request, [Map args]) {
-    return (apiSource as PostApiSource).post(request, args);
+  Future<T> save(R? request, [Map? args]) {
+    return (apiSource as PostApiSource).post(request, args).then((value) => value as T);
   }
 }

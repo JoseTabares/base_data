@@ -7,7 +7,7 @@ mixin StorageSimpleStreamRepositoryAdapter<T>
   DbSource get dbSource;
 
   @override
-  Stream<T> stream([Map args]) {
+  Stream<T?> stream([Map? args]) {
     return (dbSource as SimpleStreamDbSource<T>).stream(args);
   }
 }

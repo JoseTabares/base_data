@@ -6,7 +6,7 @@ mixin StorageStreamByIdRepositoryAdapter<T> implements StreamByIdRepository<T> {
   DbSource get dbSource;
 
   @override
-  Stream<T> streamById(String id, [Map args]) {
-    return (dbSource as StreamByIdDbSource).streamById(id, args);
+  Stream<T?> streamById(String? id, [Map? args]) {
+    return (dbSource as StreamByIdDbSource).streamById(id, args) as Stream<T>;
   }
 }

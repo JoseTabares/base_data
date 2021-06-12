@@ -11,7 +11,7 @@ mixin StorageSimpleGetRepositoryAdapter<T extends BaseModel>
   DbSource get dbSource;
 
   @override
-  Future<T> get([Map args]) {
+  Future<T?> get([Map? args]) {
     return (apiSource as GetApiSource<T>).get(args).then((result) async {
       if (result != null) {
         await (dbSource as SimplePutDbSource<T>).put(result, args);
@@ -25,7 +25,7 @@ mixin SimpleGetRepositoryAdapter<T> implements SimpleGetRepository<T> {
   ApiSource get apiSource;
 
   @override
-  Future<T> get([Map args]) {
-    return (apiSource as GetApiSource).get(args);
+  Future<T?> get([Map? args]) {
+    return (apiSource as GetApiSource).get(args).then((value) => value as T);
   }
 }

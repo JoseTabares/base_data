@@ -17,6 +17,7 @@ class UsersRepositoryAdapter with GetAllRepositoryAdapter<User> {
 }
 
 ```
+
 For use repositories with api and db implementations
 
 ```dart

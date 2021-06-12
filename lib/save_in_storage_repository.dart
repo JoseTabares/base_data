@@ -8,7 +8,7 @@ mixin SaveInStorageRepositoryAdapter<T extends BaseModel>
   DbSource get dbSource;
 
   @override
-  Future saveInStorage(T request, [Map args]) {
+  Future saveInStorage(T? request, [Map? args]) {
     return (dbSource as PutDbSource).put(request, args);
   }
 }

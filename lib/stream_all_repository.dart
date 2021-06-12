@@ -6,7 +6,7 @@ mixin StorageStreamAllRepositoryAdapter<T> implements StreamAllRepository<T> {
   DbSource get dbSource;
 
   @override
-  Stream<List<T>> streamAll([Map args]) {
-    return (dbSource as StreamAllDbSource).streamAll(args);
+  Stream<List<T>?> streamAll([Map? args]) {
+    return (dbSource as StreamAllDbSource).streamAll(args) as Stream<List<T>>;
   }
 }

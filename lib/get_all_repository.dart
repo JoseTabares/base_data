@@ -11,7 +11,7 @@ mixin StorageGetAllRepositoryAdapter<T extends BaseModel>
   DbSource get dbSource;
 
   @override
-  Future<List<T>> getAll([Map args]) {
+  Future<List<T>?> getAll([Map? args]) {
     return (apiSource as GetAllApiSource<T>).getAll(args).then((result) async {
       await (dbSource as PutAllDbSource<T>).putAll(result, args: args);
       return result;
@@ -23,7 +23,7 @@ mixin GetAllRepositoryAdapter<T> implements GetAllRepository<T> {
   ApiSource get apiSource;
 
   @override
-  Future<List<T>> getAll([Map args]) {
+  Future<List<T>?> getAll([Map? args]) {
     return (apiSource as GetAllApiSource<T>).getAll(args);
   }
 }
